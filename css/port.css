@@ -1,0 +1,345 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex; /* Para centralizar o conteúdo da página */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+    flex-direction: column; /* Permite que o conteúdo seja empilhado */
+}
+
+/* Estilo para o link */
+.link a {
+    color: #000000; /* Cor preta */
+    text-decoration: none; /* Remove sublinhado padrão do link */
+    font-weight: bold; /* Deixa o texto em negrito */
+    transition: color 0.3s ease-in-out; /* Transição suave para a mudança de cor */
+}
+
+.link a:hover {
+    color: #FFD700; /* Muda para cor ouro ao passar o mouse */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Variáveis de cor */
+:root {
+    --primary-color: #FFD700;
+    --secondary-color: #939;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --footer-color: #000000;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Centraliza o cabeçalho */
+header {
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.header-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.header-logo img {
+    width: 50px;
+    height: auto;
+    filter: invert(1); /* Inverte as cores da imagem */
+}
+
+.header-logo a:hover img {
+    transform: scale(2.1); /* Amplia a imagem ao passar o mouse */
+    filter: invert(0.8); /* Ajusta a inversão de cores ao passar o mouse */
+}
+
+/* Centraliza os itens no cabeçalho */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center; /* Centraliza os links no menu */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Centralização das seções principais */
+.section {
+    padding: 40px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+    transition: all 0.3s;
+}
+
+.section h2::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    bottom: 0;
+    left: 50%;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.section h2:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Grid centralizada */
+.grid {
+    flex-wrap: wrap; /* Permite que os itens se quebrem para a próxima linha, se necessário */
+    gap: 20px;
+    width: 100%;
+    flex-direction: row; /* Garante que os itens sejam organizados horizontalmente */
+    display: flex;
+    justify-content: center;  
+    align-items: center; 
+}
+
+/* Ajusta a largura das abas */
+.abas1, .abas2 {
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 25%; /* Ajusta a largura para 45% */
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.abas1:hover, .abas2:hover {
+    transform: scale(1.05); /* Efeito de hover para ampliar as abas */
+}
+
+/* Galeria centralizada */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery a {
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito de hover na galeria */
+.project-gallery a:hover {
+    transform: scale(1.05);
+}
+
+.gallery-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+/* Rodapé centralizado */
+footer {
+    background: var(--footer-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Seção de contato centralizada */
+#contact {
+    padding: 40px 0;
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.contact-link img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contact-link:hover img {
+    transform: scale(1.1);
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 500px;
+}
+
+form button {
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #555;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column; /* Para telas pequenas, a grid ficará empilhada verticalmente */
+        align-items: center; /* Alinha os itens ao centro */
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-link img {
+        width: 30px;
+        height: 30px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+#about-me {
+    padding: 40px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-photo {
+    flex: 1;
+    margin: 10px;
+}
+
+.about-photo img {
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-details {
+    flex: 2;
+    margin: 10px;
+    text-align: left;
+}
+
+.about-details h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.about-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-details ul li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
